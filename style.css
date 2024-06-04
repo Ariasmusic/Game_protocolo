@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap");
+
+
 body,
 html {
     height: 100%;
@@ -219,7 +222,18 @@ html {
     z-index: 999;
 
     background-color: black;
+}
 
+.play h1 {
+    color: #fefdfd;
+    text-align: center;
+    font-family: "Jacquard 12", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 100px;
+}
+
+.conten_play {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -305,3 +319,55 @@ html {
 .card-winner:active {
     transform: scale(0.95) rotateZ(1.7deg);
 }
+
+
+/* titulo animado */
+
+
+svg {
+    font-family: "Rubik Iso", sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+svg text {
+    animation: stroke 5s infinite alternate;
+    stroke-width: 2;
+    stroke: #26A01E;
+    font-size: 105px;
+}
+
+@keyframes stroke {
+    0% {
+        fill: rgba(248, 248, 248, 0);
+        stroke: rgba(38, 160, 30, 1);
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 2;
+    }
+
+    70% {
+        fill: rgba(232, 240, 232, 0);
+        stroke: rgba(38, 160, 30, 1);
+    }
+
+    80% {
+        fill: rgba(33, 204, 32, 0);
+        stroke: rgba(38, 160, 30, 1);
+        stroke-width: 3;
+    }
+
+    100% {
+        fill: rgba(33, 204, 32, 1);
+        stroke: rgba(245, 249, 244, 0);
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 50% 0;
+        stroke-width: 0;
+    }
+}
+
+.wrapper {
+    background-color: #ffffff00
+}
+
+;
