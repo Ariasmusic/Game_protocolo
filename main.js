@@ -2,6 +2,7 @@ function play() {
     document.getElementById('container-play').style.display = 'none';
     var audio = document.getElementById('myAudio');
     audio.play();
+    audio.volume -= .5;
 }
 
 
@@ -28,14 +29,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Verifica si la tecla presionada es la flecha hacia arriba y no ha alcanzado la posición máxima
         if (keyPressed === " " && currentPosition1 > maxTopPosition) {
+            let salto = document.getElementById('salto');
+            salto.play();
             // Calcula la nueva posición restando 10 píxeles a la posición actual
             const newPosition = currentPosition1 - 60;
             // Aplica la nueva posición a la imagen actualizando el estilo top en CSS
             img1.style.top = `${newPosition}px`;
             punt_player_1 = punt_player_1 + 1;
             document.getElementById("punt_player_1").innerHTML = punt_player_1;
+
         }
         if (keyPressed === "s") {
+            let perder = document.getElementById('perder');
+            perder.play();
+            // perder.volume += 2;
             // Calcula la nueva posición restando 10 píxeles a la posición actual
             const newPosition = currentPosition1 + 60;
             // Aplica la nueva posición a la imagen actualizando el estilo top en CSS
@@ -44,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("punt_player_1").innerHTML = punt_player_1;
         }
         if (keyPressed === "ArrowUp" && currentPosition2 > maxTopPosition) {
+            salto.play();
             // Calcula la nueva posición restando 10 píxeles a la posición actual
             const newPosition2 = currentPosition2 - 60;
             // Aplica la nueva posición a la imagen actualizando el estilo top en CSS
@@ -53,6 +61,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
         if (keyPressed === "ArrowDown") {
+            perder.play();
+            // perder.volume += 2;
             // Calcula la nueva posición restando 10 píxeles a la posición actual
             const newPosition2 = currentPosition2 + 60;
             // Aplica la nueva posición a la imagen actualizando el estilo top en CSS
@@ -65,6 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('winner').classList.remove('hidden');
             img1.style.display = 'none';
             img2.style.display = 'none';
+            let winner = document.getElementById('ganar');
+            let audio = document.getElementById('myAudio');
+            audio.pause();
+            winner.play();
             if (currentPosition1 <= maxTopPosition) {
                 document.getElementById('personaje-1').src = "img/browserwinner.webp";
                 document.getElementById('personaje-1').style.width = '180px';
@@ -88,5 +102,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function reload() {
     window.location.reload();
-
 }
