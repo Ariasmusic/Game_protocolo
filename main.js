@@ -1,6 +1,7 @@
 function play() {
     document.getElementById('container-play').style.display = 'none';
-
+    var audio = document.getElementById('myAudio');
+    audio.play();
 }
 
 
@@ -78,12 +79,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
+document.addEventListener("DOMContentLoaded", function () {
+    var audio = document.getElementById('myAudio');
+    audio.play().catch(function (error) {
+        console.log('Reproducción automática no permitida:', error);
+    });
+});
 
 function reload() {
     window.location.reload();
 
 }
-
-
-
