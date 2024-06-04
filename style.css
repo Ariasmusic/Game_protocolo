@@ -1,0 +1,306 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    background-image: url('img/fff.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.winner {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.btn_rn {
+    position: absolute;
+    bottom: -350px;
+}
+
+.player-1,
+.player-2 {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    border: 2px solid white;
+    border-radius: 12px;
+    padding: 5px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(250, 247, 250, 1);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(250, 247, 250, 1);
+    box-shadow: 5px 5px 5px 0px rgba(250, 247, 250, 1);
+    gap: 5px;
+}
+
+.point {
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.puntos {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.365);
+    padding: 10px;
+}
+
+#movingImg-1 {
+    position: absolute;
+    left: 300px;
+    bottom: 0;
+    transition: transform 0.3s ease-in-out;
+    width: 150px;
+
+    filter: drop-shadow(7px 7px 5px #fefdfd);
+}
+
+#movingImg-2 {
+    position: absolute;
+    right: 300px;
+    bottom: 0;
+    transition: transform 0.3s ease-in-out;
+    width: 100px;
+    height: 150px;
+    filter: drop-shadow(7px 7px 5px #fefdfd);
+}
+
+.anima {
+    animation: girar 5s linear;
+}
+
+.ganaste {
+    position: relative;
+    background-image: url('img/msj_the_end.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0%;
+    background-color: rgba(0, 0, 0, 0.886);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: animation .7s;
+    animation: 2s winner linear;
+}
+
+.conten-winner {
+    position: absolute;
+    top: 27%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.winnerone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes winner {
+    0% {
+        background-position: center;
+        background-size: 0%;
+    }
+
+    /* 50% {
+        background-size: 50%;
+    } */
+
+    100% {
+        background-position: center;
+        background-size: 100%;
+    }
+
+}
+
+.ganaste img:nth-child(1) {
+    width: 300px;
+    filter: drop-shadow(7px 7px 7px #fefdfd);
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* === removing default button style ===*/
+.button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+/* button styling */
+.button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255, 255, 255, 0.6);
+    --animation-color: #37FF8B;
+    --fs-size: 2em;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+
+/* this is the text, when you hover on button */
+.hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+}
+
+/* hover */
+.button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
+.play {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
+
+    background-color: black;
+
+    display: grid;
+    place-content: center;
+}
+
+/* btn-play */
+.btn-play {
+    --glow-color: rgb(192, 255, 176);
+    --glow-spread-color: rgba(123, 255, 123, 0.781);
+    --enhanced-glow-color: rgb(216, 255, 206);
+    --btn-color: rgb(61, 136, 61);
+    border: .25em solid var(--glow-color);
+    padding: 1em 3em;
+    color: var(--glow-color);
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border-radius: 1em;
+    outline: none;
+    box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+    text-shadow: 0 0 .5em var(--glow-color);
+    position: relative;
+    transition: all 0.3s;
+}
+
+.btn-play::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 120%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--glow-spread-color);
+    filter: blur(2em);
+    opacity: .7;
+    transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+.btn-play:hover {
+    color: var(--btn-color);
+    background-color: var(--glow-color);
+    box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+.btn-play:active {
+    box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
+
+
+
+/* //card winner */
+.card-winner {
+    box-sizing: border-box;
+    width: 390px;
+    height: 470px;
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+}
+
+.card-winner:hover {
+    transform: scale(1.05);
+}
+
+.card-winner:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}

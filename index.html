@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Protocolo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="play" id="container-play">
+        <button id="btn_play" onclick="play()" class="btn-play"> PLAY GAME
+        </button>
+    </div>
+    <div class="container">
+        <div class="puntos">
+            <div class="player-1">
+                <img src="img/icon-player-1.png" width="100">
+                <span id="punt_player_1">0</span>
+            </div>
+
+            <img src="img/logoCGS.png" width="100" style="filter: drop-shadow(7px 7px 7px #fefdfd);">
+            <div class="player-2">
+                <span id="punt_player_2">0</span>
+                <img src="img/icon-player-2.png" width="100">
+
+            </div>
+        </div>
+        <div class="point">
+            <img src="img/star.gif">
+            <img src="img/star.gif">
+        </div>
+        <img id="movingImg-1" alt="Imagen a mover" src="img/personaje.png">
+        <img id="movingImg-2" alt="Imagen a mover" src="img/personajewinner.png">
+    </div>
+    <div class="ganaste hidden" id="winner">
+        <div class="conten-winner">
+            <div class="winnerone card-winner">
+                <img src="img/winner.gif" alt="Ganaste" width="70">
+                <img id="personaje-1" width="90" src="">
+            </div>
+            <div class="winnerone card-winner">
+                <img src="img/2puesto.gif" alt="Ganaste">
+                <img id="personaje-2" width="90" src=""> 
+            </div>
+        </div>
+        <button class="button btn_rn" data-text="Awesome" onclick="reload()">
+            <span class="actual-text">&nbsp;Reiniciar&nbsp;</span>
+            <span aria-hidden="true" class="hover-text">&nbsp;Reiniciar&nbsp;</span>
+        </button>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
